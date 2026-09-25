@@ -1,25 +1,74 @@
-import colorsys
-import turtle
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-screen = turtle.Screen()
-screen.bgcolor("black")
+    <title>3D Animation World</title>
 
-t = turtle.Turtle()
-t.speed(0)
-t.width(1)
+    <!-- CSS CONNECT -->
+    <link rel="stylesheet" href="style.css">
+</head>
 
-n, h = 36, 0
+<body>
 
-for i in range(200):
-    c = colorsys.hsv_to_rgb(h, 1, 1)
-    t.color(c)
+    <header>
+        <nav>
+            <div class="logo">3D WORLD</div>
 
-    h += 1 / n
+            <div class="menu">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#ai">AI</a>
+                <a href="#html">HTML</a>
+                <a href="#css">CSS</a>
+            </div>
+        </nav>
+    </header>
 
-    t.forward(i)
-    t.left(135)
-    t.forward(i)
-    t.left(30)
-    t.circle(i, 45)
+    <main id="home">
 
-turtle.done()
+        <section class="hero">
+
+            <div class="hero-text">
+                <p class="small-title">INTERACTIVE 3D EXPERIENCE</p>
+
+                <h1>
+                    Welcome to<br>
+                    <span>3D World</span>
+                </h1>
+
+                <p class="description">
+                    Explore an interactive 3D animation website
+                    with HTML, CSS, JavaScript and AI.
+                </p>
+
+                <div class="buttons">
+                    <button id="changeBtn">Change Animation</button>
+                    <button id="stopBtn">Stop Animation</button>
+                </div>
+            </div>
+
+            <!-- 3D OBJECT -->
+            <div class="scene">
+                <div class="cube" id="cube">
+
+                    <div class="face front">3D</div>
+                    <div class="face back">WEB</div>
+                    <div class="face right">AI</div>
+                    <div class="face left">HTML</div>
+                    <div class="face top">CSS</div>
+                    <div class="face bottom">JS</div>
+
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- JAVASCRIPT CONNECT -->
+    <script src="script.js"></script>
+
+</body>
+</html>
