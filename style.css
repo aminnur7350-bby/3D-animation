@@ -1,1 +1,358 @@
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background: #020617;
+    color: white;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+/* PARTICLES */
+
+#particles {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -2;
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: particleMove linear infinite;
+}
+
+@keyframes particleMove {
+
+    from {
+        transform: translateY(100vh);
+    }
+
+    to {
+        transform: translateY(-20vh);
+    }
+}
+
+/* NAVIGATION */
+
+nav {
+    padding: 25px 7%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.menu {
+    display: flex;
+    gap: 30px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    color: #38bdf8;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 80vh;
+
+    padding: 40px 7%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content {
+    max-width: 550px;
+}
+
+.small-title {
+    color: #38bdf8;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: clamp(60px, 8vw, 100px);
+    line-height: 0.9;
+    margin-bottom: 30px;
+}
+
+h1 span {
+    color: #38bdf8;
+}
+
+.description {
+    color: #cbd5e1;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 35px;
+}
+
+button {
+    padding: 14px 25px;
+
+    border: none;
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+    font-size: 15px;
+
+    background: #2563eb;
+    color: white;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.4);
+}
+
+/* PLANET AREA */
+
+.planet-area {
+    width: 400px;
+    height: 400px;
+
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    perspective: 1000px;
+}
+
+/* PLANET */
+
+.planet {
+    width: 250px;
+    height: 250px;
+
+    border-radius: 50%;
+
+    position: relative;
+
+    background:
+        radial-gradient(
+            circle at 30% 30%,
+            #93c5fd,
+            #2563eb 40%,
+            #172554 75%,
+            #020617
+        );
+
+    box-shadow:
+        -25px -15px 40px rgba(255,255,255,0.25) inset,
+        25px 20px 50px rgba(0,0,0,0.8) inset,
+        0 0 50px rgba(37,99,235,0.7);
+
+    animation: planetRotate 10s linear infinite;
+
+    transform-style: preserve-3d;
+
+    transition: 0.5s;
+}
+
+@keyframes planetRotate {
+
+    from {
+        transform: rotateY(0deg);
+    }
+
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+/* PLANET RING */
+
+.planet-ring {
+    position: absolute;
+
+    width: 350px;
+    height: 90px;
+
+    border: 3px solid rgba(255,255,255,0.5);
+
+    border-radius: 50%;
+
+    top: 80px;
+    left: -50px;
+
+    transform: rotateX(70deg);
+
+    box-shadow:
+        0 0 20px rgba(96,165,250,0.7);
+}
+
+/* LIGHT */
+
+.light {
+    position: absolute;
+
+    width: 320px;
+    height: 320px;
+
+    border-radius: 50%;
+
+    background: rgba(56,189,248,0.15);
+
+    filter: blur(30px);
+
+    animation: lightPulse 3s infinite alternate;
+}
+
+@keyframes lightPulse {
+
+    from {
+        transform: scale(0.9);
+    }
+
+    to {
+        transform: scale(1.15);
+    }
+}
+
+/* PLANET SHADOW */
+
+.planet-shadow {
+    position: absolute;
+
+    width: 220px;
+    height: 40px;
+
+    background: rgba(0,0,0,0.6);
+
+    border-radius: 50%;
+
+    bottom: 25px;
+
+    filter: blur(15px);
+}
+
+/* INFO */
+
+.info {
+    min-height: 45vh;
+
+    padding: 100px 10%;
+
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.info h2 {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.info p {
+    max-width: 700px;
+
+    color: #cbd5e1;
+
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+
+    padding: 30px;
+
+    color: #64748b;
+}
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    nav {
+        padding: 20px;
+    }
+
+    .menu {
+        gap: 12px;
+    }
+
+    .menu a {
+        font-size: 14px;
+    }
+
+    .hero {
+        flex-direction: column;
+
+        text-align: center;
+
+        padding: 50px 20px;
+
+        gap: 70px;
+    }
+
+    .description {
+        margin: auto;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
+    .planet-area {
+        width: 300px;
+        height: 300px;
+    }
+
+    .planet {
+        width: 200px;
+        height: 200px;
+    }
+
+    .planet-ring {
+        width: 280px;
+        left: -40px;
+        top: 65px;
+    }
+}
